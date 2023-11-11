@@ -353,7 +353,7 @@
         <button class="modal-btn-close" type="button">Close</button>
         <h2>Замовити дзвінок</h2>
         <p>Залишіть заявку та наш спеціаліст зв'яжеться з Вами!</p>
-        <form name="contact-form" autocomplete="off" novalidate>
+        <form name="contact-form" autocomplete="off">
           <div class="form-field">
             <label class="form-label visually-hidden" for="user-name"
               >Імʼя</label
@@ -364,6 +364,9 @@
               name="user-name"
               id="user-name"
               placeholder="Імʼя"
+              minlength="2"
+              maxlength="20"
+              required
             />
           </div>
           <div class="form-field">
@@ -375,7 +378,9 @@
               type="tel"
               name="user-tel"
               id="user-tel"
-              placeholder="Телефон"
+              placeholder="Телефон (починати з +)"
+              required
+              pattern="^\+[0-9]{12}"
             />
           </div>
           <div class="form-field">
@@ -388,6 +393,7 @@
               name="user-email"
               id="user-email"
               placeholder="Електронна пошта"
+              required
             />
           </div>
           <button class="form-button button" type="submit">
