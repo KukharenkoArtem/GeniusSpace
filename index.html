@@ -28,6 +28,12 @@
         d="M0.530988 8.70711C0.140463 8.31658 0.140463 7.68342 0.530987 7.29289L6.89495 0.928933C7.28547 0.538409 7.91864 0.538409 8.30916 0.928933C8.69969 1.31946 8.69969 1.95262 8.30916 2.34315L2.65231 8L8.30916 13.6569C8.69969 14.0474 8.69969 14.6805 8.30916 15.0711C7.91864 15.4616 7.28547 15.4616 6.89495 15.0711L0.530988 8.70711ZM18 9L1.23809 9L1.23809 7L18 7L18 9Z" />
     </symbol>
   </svg>
+  <svg class="icon-menu" display="none">
+    <symbol id="icon-menu" viewBox="0 0 32 32">
+      <path
+        d="M29.333 24.007c0 0.733-0.595 1.327-1.327 1.327h-10.68c-0.733 0-1.327-0.594-1.327-1.327s0.594-1.327 1.327-1.327h10.68c0.733 0 1.327 0.593 1.327 1.327zM29.333 16c0 0.733-0.595 1.327-1.327 1.327h-24.013c-0.733 0-1.327-0.594-1.327-1.327s0.594-1.327 1.327-1.327h24.013c0.733 0 1.327 0.595 1.327 1.327zM28.007 9.32c0.733 0 1.327-0.594 1.327-1.327s-0.594-1.327-1.327-1.327h-16.013c-0.733 0-1.327 0.594-1.327 1.327s0.594 1.327 1.327 1.327h16.013z" />
+    </symbol>
+  </svg>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./scss/main.min.css" />
@@ -51,9 +57,17 @@
             <li><a class="link" href="#contact-section">Контакти</a></li>
           </ul>
         </nav>
-        <button class="button modal-btn-open" type="button">
+        <button class="header__button button modal-btn-open" type="button">
           Замовити дзвінок
         </button>
+        <button class="header__burger menu-btn-open" type="button">
+          <svg width="24" height="24">
+            <use xlink:href="#icon-menu"></use>
+          </svg>
+        </button>
+        <div class="mobile-menu">
+          <button class="mobile-menu__btn-close menu-btn-close" type="button">Close</button>
+        </div>
       </div>
     </div>
   </header>
@@ -63,6 +77,9 @@
         <h1 class="hero-section__title">
           <span class="text-brand">Сучасна </span>пекарня
         </h1>
+        <button class="hero-section__button button modal-btn-open" type="button">
+          Замовити дзвінок
+        </button>
       </div>
     </section>
     <section class="advantages-section">
@@ -93,7 +110,8 @@
               наших пекарень стильний дизайн та висока якість обслуговування!
             </p>
           </div>
-          <img src="./image/baker-man.jpg" alt="Пекар, що дивиться на хліб" />
+          <img class="traditions-section__image" srcset="./image/baker-man.jpg 1x, ./image/baker-man@2x.jpg 2x"
+            src="./image/baker-man.jpg" alt="Пекар, що дивиться на хліб із посмішкою" />
         </div>
       </div>
     </section>
@@ -289,7 +307,7 @@
     </div>
   </footer>
 
-  <div class="backdrop">
+  <div class="backdrop is-hidden">
     <div class="modal">
       <button class="modal__btn-close modal-btn-close" type="button">Close</button>
       <h2>Замовити дзвінок</h2>
@@ -321,6 +339,7 @@
     </div>
   </div>
   <script src="./js/modal.js"></script>
+  <script src="./js/mobile-menu.js"></script>
 </body>
 
 </html>
